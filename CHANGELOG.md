@@ -7,10 +7,14 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.2.3] - 2026-08-16
+
 ### Fixed
 
 - Strip a leading UTF-8 BOM from `.env` file contents so the first variable is no longer silently lost when the file is saved with BOM (e.g. by some JetBrains IDEs on Windows) by [@h1whelan] in [#640]
-- `set_key` now escapes backslashes, so values containing them (Windows paths, regular expressions) survive a write/read round-trip. Quoted values ending in an escaped backslash are no longer mis-parsed as an escaped quote, which used to swallow the following lines by [@dchaudhari7177] in [#661]
+- `set_key` now escapes backslashes, so values containing them (Windows paths, regular expressions) survive a write/read round-trip. Quoted values ending in an escaped backslash are no longer mis-parsed as an escaped quote, which used to swallow the following lines by [@dchaudhari7177] in [#680]
+- `dotenv run` now prints a friendly error instead of a traceback when no command is given by [@bbc2] in [#606]
+- Cache the parsed result for empty `.env` files so repeated `dotenv_values`/`load_dotenv` calls no longer re-read the file by [@ReinerBRO] in [#638]
 
 ## [1.2.2] - 2026-03-01
 
@@ -435,8 +439,10 @@ os.PathLike]` instead of just `os.PathLike` (#347 by [@bbc2]).
 [#563]: https://github.com/theskumar/python-dotenv/pull/563
 [#497]: https://github.com/theskumar/python-dotenv/pull/497
 [#161]: https://github.com/theskumar/python-dotenv/issues/161
+[#606]: https://github.com/theskumar/python-dotenv/pull/606
+[#638]: https://github.com/theskumar/python-dotenv/pull/638
 [#640]: https://github.com/theskumar/python-dotenv/pull/640
-[#661]: https://github.com/theskumar/python-dotenv/issues/661
+[#680]: https://github.com/theskumar/python-dotenv/pull/680
 [790c5c0]: https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311
 
 <!-- contributors -->
@@ -447,6 +453,7 @@ os.PathLike]` instead of just `os.PathLike` (#347 by [@bbc2]).
 [@Nicals]: https://github.com/Nicals
 [@Nougat-Waffle]: https://github.com/Nougat-Waffle
 [@Qwerty-133]: https://github.com/Qwerty-133
+[@ReinerBRO]: https://github.com/ReinerBRO
 [@alanjds]: https://github.com/alanjds
 [@altendky]: https://github.com/altendky
 [@andrewsmith]: https://github.com/andrewsmith
@@ -495,7 +502,8 @@ os.PathLike]` instead of just `os.PathLike` (#347 by [@bbc2]).
 [@JYOuyang]: https://github.com/JYOuyang
 [@burnout-projects]: https://github.com/burnout-projects
 [@cpackham-atlnz]: https://github.com/cpackham-atlnz
-[Unreleased]: https://github.com/theskumar/python-dotenv/compare/v1.2.2...HEAD
+[Unreleased]: https://github.com/theskumar/python-dotenv/compare/v1.2.3...HEAD
+[1.2.3]: https://github.com/theskumar/python-dotenv/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/theskumar/python-dotenv/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/theskumar/python-dotenv/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/theskumar/python-dotenv/compare/v1.1.1...v1.2.0
