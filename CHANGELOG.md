@@ -7,6 +7,10 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- An unquoted empty value followed by an inline comment (e.g. `KEY= # comment`) is now parsed as an empty string instead of the comment text by [@Noethix55555] in [#663]
+
 ## [1.2.3] - 2026-08-16
 
 ### Fixed
@@ -442,6 +446,7 @@ os.PathLike]` instead of just `os.PathLike` (#347 by [@bbc2]).
 [#606]: https://github.com/theskumar/python-dotenv/pull/606
 [#638]: https://github.com/theskumar/python-dotenv/pull/638
 [#640]: https://github.com/theskumar/python-dotenv/pull/640
+[#663]: https://github.com/theskumar/python-dotenv/pull/663
 [#680]: https://github.com/theskumar/python-dotenv/pull/680
 [790c5c0]: https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311
 
@@ -483,6 +488,7 @@ os.PathLike]` instead of just `os.PathLike` (#347 by [@bbc2]).
 [@matthewfranglen]: https://github.com/matthewfranglen
 [@mgorny]: https://github.com/mgorny
 [@naorlivne]: https://github.com/naorlivne
+[@Noethix55555]: https://github.com/Noethix55555
 [@qnighy]: https://github.com/qnighy
 [@rabinadk1]: https://github.com/rabinadk1
 [@randomseed42]: https://github.com/randomseed42
